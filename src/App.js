@@ -208,8 +208,22 @@ export default function App() {
       <section id="contact" className="w-full py-16 px-6 text-center scroll-mt-24 md:scroll-mt-40">
         <h2 className="text-3xl font-bold text-green-700 mb-4">{t.contactTitle}</h2>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">{t.contactDesc}</p>
-        <Button className="bg-green-600 hover:bg-green-700 text-white rounded-xl px-6 py-3">{t.email}</Button>
-      </section>
+       <Button
+  onClick={(e) => {
+    e.preventDefault(); // Bazı tarayıcılar default davranışı engelliyor
+    const subject = encodeURIComponent("MEDIVIA İletişim Talebi");
+    const body = encodeURIComponent("Merhaba MEDIVIA ekibi,");
+    const to = "batu.sut@gmail.com";
+    const mailtoUrl = `mailto:${to}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+  }}
+  className="bg-green-600 hover:bg-green-700 text-white rounded-xl px-6 py-3"
+>
+  {t.email}
+</Button>
+
+
+       </section>
 
       <footer className="bg-green-700 text-white w-full py-8 text-center mt-auto">
         <p className="font-medium">© 2025 MEDIVIA | {t.heroTitle}</p>
