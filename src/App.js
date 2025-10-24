@@ -177,7 +177,7 @@ export default function App() {
       </section>
 
       {/* HOSPITALS */}
-      <section id="hospitals" className="grid md:grid-cols-3 gap-6 my-20 px-8 w-full max-w-6xl">
+      <section id="hospitals" className="grid md:grid-cols-3 gap-6 my-20 px-8 w-full max-w-6xl scroll-mt-40">
         {filtered.map((h, i) => (
           <motion.div key={i} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 200 }}>
             <Card onClick={() => setSelectedHospital(h)} className="shadow-md rounded-2xl border-green-200 border bg-white cursor-pointer hover:shadow-lg">
@@ -212,7 +212,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* ABOUT */}
-      <section id="about" className="bg-green-50 w-full py-16 px-6 text-center">
+      <section id="about" className="bg-green-50 w-full py-16 px-6 text-center scroll-mt-40">
         <h2 className="text-3xl font-bold text-green-700 mb-4">{t.aboutTitle}</h2>
         <p className="text-gray-600 max-w-3xl mx-auto mb-6">{t.aboutDesc}</p>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -226,7 +226,7 @@ export default function App() {
       </section>
 
       {/* CONTACT (Gmail linkli) */}
-      <section id="contact" className="w-full py-16 px-6 text-center">
+      <section id="contact" className="w-full py-16 px-6 text-center scroll-mt-16">
         <h2 className="text-3xl font-bold text-green-700 mb-4">{t.contactTitle}</h2>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">{t.contactDesc}</p>
         <a
